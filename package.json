@@ -1,8 +1,8 @@
 {
   "name": "@anhhung04/omp-docker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "OMP plugin: native Docker tools and skills \u2014 containers, images, builds, Compose projects, Swarm clusters, agent sandboxes, networks, volumes, diagnostics and cleanup",
-  "license": "BUSL-1.1",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "keywords": [
     "omp",

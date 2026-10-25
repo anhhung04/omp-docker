@@ -122,13 +122,14 @@ prefer `docker_cleanup action="plan"` before `apply`.
 
 ## License
 
-[Business Source License 1.1](https://spdx.org/licenses/BUSL-1.1.html) — SPDX `BUSL-1.1`.
+[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)
+— SPDX `PolyForm-Noncommercial-1.0.0`.
 
-- **Allowed without a commercial agreement:** copy, modify, redistribute and any
-  **non-production** use (local development, testing, research, personal automation).
-- **Restricted until the Change Date:** production/commercial use — purchase a license
-  from the Licensor instead.
-- **Change Date: 2030-10-25** — on (or before) that date each version converts to
-  **GPL-2.0-or-later**, as required by the license's Change License covenant.
+- **Permitted:** any noncommercial purpose — personal use, research, experiment,
+  testing, hobby projects, and use by noncommercial/educational/public-research
+  organizations regardless of funding.
+- **Not permitted:** commercial use — that requires a separate license from the
+  Licensor.
 
-See [LICENSE](LICENSE) for the full text and license parameters.
+Note: GitHub's license detector does not recognise PolyForm, so the repo sidebar shows
+"Other". The license itself is unaffected; see [LICENSE](LICENSE) for the full text.
