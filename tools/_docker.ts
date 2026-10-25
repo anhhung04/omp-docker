@@ -15,6 +15,8 @@
 
 import type { AgentToolResult, ExecOptions, ExecResult } from "@oh-my-pi/pi-coding-agent";
 
+export type { ExecResult };
+
 export type ExecFn = (
   command: string,
   args: string[],
@@ -257,4 +259,32 @@ export function dockerUnavailable(res: RunResult): boolean {
   return /Cannot connect to the Docker daemon|permission denied while trying to connect/i.test(
     `${res.stderr}\n${res.stdout}`,
   );
+}
+
+export interface CliOutcome {
+  stdout: string;
+  stderr: string;
+  code: number;
+}
+
+/**
+ * Swarm commands need a manager; workers and standalone nodes get a terse daemon
+ * error that never says what to do. Turn that into the actual next step.
+ */
+export function swarmFailure(label: string, res: CliOutcome): AgentToolResult {
+  const combined = `${res.stderr}\n${res.stdout}`;
+  if (/not a swarm manager/i.test(combined)) {
+    return fail(
+      `${label} failed: this node is not a swarm manager. ` +
+        "Run docker_swarm action='init' to create a swarm here, docker_swarm action='join' to join an existing one, " +
+        "or point DOCKER_HOST at a manager. Workers cannot list or change cluster state.",
+    );
+  }
+  if (/not part of a swarm|swarm is not active|not a swarm node/i.test(combined)) {
+    return fail(
+      `${label} failed: swarm is inactive on this node. ` +
+        "Use docker_swarm action='init' (single node) or action='join' with a manager token.",
+    );
+  }
+  return fail(`${label} failed (exit ${res.code}):\n${clamp(combined, 4_000)}`);
 }

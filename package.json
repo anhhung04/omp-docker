@@ -1,32 +1,40 @@
 {
   "name": "@anhhung04/omp-docker",
-  "version": "0.1.0",
-  "description": "OMP plugin: native Docker tools and skills — containers, images, builds, Compose projects, networks, volumes, diagnostics and cleanup",
+  "version": "0.2.0",
+  "description": "OMP plugin: native Docker tools and skills \u2014 containers, images, builds, Compose projects, Swarm clusters, agent sandboxes, networks, volumes, diagnostics and cleanup",
   "license": "PolyForm-Noncommercial-1.0.0",
   "type": "module",
   "keywords": [
     "omp",
     "plugin",
     "docker",
-    "containers",
-    "compose"
+    "swarm",
+    "compose",
+    "sandbox",
+    "containers"
   ],
   "omp": {
     "tools": [
-      "./tools/docker_container.ts",
-      "./tools/docker_ps.ts",
-      "./tools/docker_inspect.ts",
-      "./tools/docker_exec.ts",
-      "./tools/docker_run.ts",
-      "./tools/docker_cp.ts",
-      "./tools/docker_stats.ts",
       "./tools/docker_build.ts",
-      "./tools/docker_images.ts",
-      "./tools/docker_compose.ts",
-      "./tools/docker_network.ts",
-      "./tools/docker_volume.ts",
       "./tools/docker_cleanup.ts",
-      "./tools/docker_status.ts"
+      "./tools/docker_compose.ts",
+      "./tools/docker_container.ts",
+      "./tools/docker_cp.ts",
+      "./tools/docker_exec.ts",
+      "./tools/docker_images.ts",
+      "./tools/docker_inspect.ts",
+      "./tools/docker_logs.ts",
+      "./tools/docker_network.ts",
+      "./tools/docker_node.ts",
+      "./tools/docker_ps.ts",
+      "./tools/docker_run.ts",
+      "./tools/docker_sandbox.ts",
+      "./tools/docker_service.ts",
+      "./tools/docker_stack.ts",
+      "./tools/docker_stats.ts",
+      "./tools/docker_status.ts",
+      "./tools/docker_swarm.ts",
+      "./tools/docker_volume.ts"
     ]
   },
   "scripts": {
