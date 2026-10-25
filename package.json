@@ -1,0 +1,46 @@
+{
+  "name": "@anhhung04/omp-docker",
+  "version": "0.1.0",
+  "description": "OMP plugin: native Docker tools and skills — containers, images, builds, Compose projects, networks, volumes, diagnostics and cleanup",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "type": "module",
+  "keywords": [
+    "omp",
+    "plugin",
+    "docker",
+    "containers",
+    "compose"
+  ],
+  "omp": {
+    "tools": [
+      "./tools/docker_container.ts",
+      "./tools/docker_ps.ts",
+      "./tools/docker_inspect.ts",
+      "./tools/docker_exec.ts",
+      "./tools/docker_run.ts",
+      "./tools/docker_cp.ts",
+      "./tools/docker_stats.ts",
+      "./tools/docker_build.ts",
+      "./tools/docker_images.ts",
+      "./tools/docker_compose.ts",
+      "./tools/docker_network.ts",
+      "./tools/docker_volume.ts",
+      "./tools/docker_cleanup.ts",
+      "./tools/docker_status.ts"
+    ]
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@oh-my-pi/pi-coding-agent": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@oh-my-pi/omptype": "^18.6.1",
+    "@oh-my-pi/pi-coding-agent": "^18.8.7",
+    "@types/node": "^22.0.0",
+    "bun-types": "^1.4.3",
+    "typescript": "^5.6.0"
+  }
+}
